@@ -34,7 +34,6 @@ public class LoginActivity extends AppCompatActivity {
                 // авторизация
                 signRequest(new LoginModel(email_input, pass_input));
             }
-            Toast.makeText(getApplicationContext(), "Проверьте формат введенных данных!", Toast.LENGTH_SHORT).show();
         });
 
         findViewById(R.id.profile_button).setOnClickListener((View.OnClickListener) view -> {
