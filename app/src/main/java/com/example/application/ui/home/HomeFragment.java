@@ -9,10 +9,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.application.R;
+import com.example.application.RecyclerViewAdapter;
 import com.example.application.databinding.FragmentHomeBinding;
 
 public class HomeFragment extends Fragment {
+
+    private RecyclerView recyclerView;
+    String list[] = {"a", "b", "c"};
 
     private FragmentHomeBinding binding;
 
@@ -23,6 +30,12 @@ public class HomeFragment extends Fragment {
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+        recyclerView = root.findViewById(R.id.feelings_recycler);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+        recyclerView.setLayoutManager(layoutManager);
+
+        recyclerView.setAdapter(new RecyclerViewAdapter(list));
 
         return root;
     }
