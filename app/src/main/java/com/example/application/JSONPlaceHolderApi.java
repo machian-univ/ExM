@@ -1,0 +1,11 @@
+package com.example.application;
+
+import retrofit2.http.Body;
+import retrofit2.http.GET;
+import retrofit2.Call;
+import retrofit2.http.POST;
+
+public interface JSONPlaceHolderApi  {
+    @POST("user/login")
+    Call<LoginResponse> login(@Body LoginModel loginModel);
+}
